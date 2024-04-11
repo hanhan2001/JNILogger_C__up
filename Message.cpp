@@ -63,6 +63,7 @@ int Message::getColor() const {
 }
 
 void Message::send(bool line) {
+    SetConsoleOutputCP(CP_UTF8);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), this->getColor());
     std::cout << this->getMessage();
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0xF);
